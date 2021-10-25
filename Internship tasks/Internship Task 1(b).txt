@@ -1,0 +1,8 @@
+select OwnerProperty.PropertyId, Property.Name, ownerproperty.ownerid, PropertyHomeValue.Value
+from ownerproperty
+--this code can be used if the we require to see owner id as a separate column
+inner join Property on ownerproperty.id = property.id
+inner join PropertyHomeValue on OwnerProperty.PropertyId = PropertyHomeValue.PropertyId
+where ownerid = 1426
+and propertyhomevalue.IsActive = 1
+order by Value
