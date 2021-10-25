@@ -1,5 +1,4 @@
-select OwnerProperty.PropertyId, Property.Name, ownerproperty.ownerid
+select OwnerProperty.PropertyId, Property.Name
 from ownerproperty
---this code shows owner id as a separate column
 inner join Property on ownerproperty.id = property.id
 where ownerid = 1426
