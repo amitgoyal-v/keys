@@ -7,3 +7,13 @@ where ownerid = 1426
 --eliminating inactive properties
 and propertyhomevalue.IsActive = 1
 order by Value
+
+--OR FOLLOWING CODE CAN BE USED FOR FASTER QUERY AND OCCUPIES LESS SPACE
+
+select OwnerProperty.PropertyId, PropertyHomeValue.Value
+from ownerproperty
+inner join PropertyHomeValue on OwnerProperty.PropertyId = PropertyHomeValue.PropertyId
+where ownerid = 1426
+--eliminating inactive properties
+and propertyhomevalue.IsActive = 1
+order by Value
