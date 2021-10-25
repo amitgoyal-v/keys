@@ -4,5 +4,6 @@ from ownerproperty
 inner join Property on ownerproperty.id = property.id
 inner join PropertyHomeValue on OwnerProperty.PropertyId = PropertyHomeValue.PropertyId
 where ownerid = 1426
+--eliminating inactive properties
 and propertyhomevalue.IsActive = 1
 order by Value
